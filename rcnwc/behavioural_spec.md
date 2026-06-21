@@ -22,10 +22,12 @@ For examples, please refer to [Behavioural Examples](behavioural_spec_examples.m
   RCNWC therefore explicitly defines the set of
   recognized line separators as any of the following:
   - U+000A LINE FEED (LF)
-  - U+000D CARRIAGE RETURN (CR)
   - U+0085 NEXT LINE (NEL)
   - U+2028 LINE SEPARATOR (LS)
   - U+2029 PARAGRAPH SEPARATOR (PS)
+
+  U+000D CARRIAGE RETURN (CR) is not considered
+  a line separator by RCNWC.
 
 ### Character
   A Unicode code point in the input.
@@ -38,8 +40,9 @@ For examples, please refer to [Behavioural Examples](behavioural_spec_examples.m
   Unicode White_Space property.
 
 ### Line
-  A maximal sequence of Unicode code points 
-  separated by Unicode line-separator characters.
+  A sequence of zero or more Unicode code points
+  bounded by the start of input, end of input,
+  or Unicode line separators.
 
 ## RCNWC Statistics
 
